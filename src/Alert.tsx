@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 interface AlertProps {
   message: string;
@@ -21,11 +20,6 @@ const Alert: React.FC<AlertProps> = ({ message, type = 'info' }) => {
       {message}
     </div>
   );
-};
-
-Alert.propTypes = {
-  message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['info', 'error'])
 };
 
 export default Alert;

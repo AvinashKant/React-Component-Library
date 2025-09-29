@@ -1,5 +1,9 @@
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
+
 export default {
-  input: 'src/index.ts',
+  input: 'src/index.tsx',     // ✅ entry file
   output: {
     file: 'dist/index.js',
     format: 'cjs',
@@ -9,8 +13,6 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    typescript({
-      tsconfig: './tsconfig.json'
-    })
+    typescript({ tsconfig: './tsconfig.json' })  // ✅ compile TS/TSX
   ]
 };
