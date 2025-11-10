@@ -1,41 +1,47 @@
 import React from 'react';
 
-interface InputProps {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-  type?: string;
+interface Option {
+  value: string | number;
+  title: string;
   disabled?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({
-  value,
+interface SelectProps {
+  options: Option[];
+  onChange: (value: string | number) => void;
+  disabled?: boolean;
+  id?: string;
+}
+
+const Select: React.FC<SelectProps> = ({
+  options,
   onChange,
-  placeholder = '',
-  type = 'text',
-  disabled = false
+  disabled = false,
+  id = ''
 }) => {
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(e.target.value);
   };
 
   return (
-    <input
-      type={type}
-      value={value}
-      placeholder={placeholder}
+    <select
+      id={id}
       disabled={disabled}
       onChange={handleChange}
-      style={{
-        padding: '10px',
-        border: '1px solid #ccc',
-        borderRadius: '4px',
-        width: '100%',
-        boxSizing: 'border-box'
-      }}
-    />
+    >
+
+      {options.map((option, index) => (
+        <option
+          key={option.value || index}
+          value={option.value}
+          disabled={option.disabled}
+        >
+          {option.title}
+        </option>
+      ))}
+    </select>
   );
 };
 
-export default Input;
+export default Select;
