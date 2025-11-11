@@ -6,6 +6,7 @@ From the library root:
 
 npm run build
 npm pack
+npm publish
 
 
 This creates a tarball file like react-alert-lib-1.0.0.tgz.
