@@ -19,3 +19,16 @@ npm install ../react-alert-lib/react-alert-lib-1.0.0.tgz
 Import and use it normally:
 
 import { Alert } from 'react-alert-lib';
+
+
+## Extending Variants
+
+You can easily add more button styles:
+```bash
+const variantClasses = {
+  blue: "...",
+  default: "...",
+  success: "bg-green-600 text-white hover:bg-green-700",
+  danger: "bg-red-600 text-white hover:bg-red-700",
+  outline: "border border-gray-400 text-gray-700",
+};
