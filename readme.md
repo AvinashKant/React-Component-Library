@@ -32,3 +32,7 @@ const variantClasses = {
   danger: "bg-red-600 text-white hover:bg-red-700",
   outline: "border border-gray-400 text-gray-700",
 };
+
+
+# VerticalDivider
+- <VerticalDivider className="mx-2 border-red-500 border-r-4"/>
