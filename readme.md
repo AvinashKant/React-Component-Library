@@ -36,3 +36,6 @@ const variantClasses = {
 
 # VerticalDivider
 - <VerticalDivider className="mx-2 border-red-500 border-r-4"/>
+
+
+npm set //registry.npmjs.org/:_authToken={}
